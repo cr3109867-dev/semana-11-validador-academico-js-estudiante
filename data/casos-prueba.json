@@ -1,0 +1,32 @@
+[
+  {
+    "nombre": "Ana Torres",
+    "correo": "ana.torres@colegio.edu",
+    "edad": 15,
+    "nota": 4.2,
+    "asistencia": 92,
+    "proyecto": "Feria digital rural",
+    "linea": "web",
+    "esperado": "Aprobado"
+  },
+  {
+    "nombre": "Luis Mejia",
+    "correo": "luis.mejia@colegio.edu",
+    "edad": 13,
+    "nota": 3.2,
+    "asistencia": 68,
+    "proyecto": "Registro de cultivos",
+    "linea": "datos",
+    "esperado": "Plan de mejora"
+  },
+  {
+    "nombre": "Sara Rios",
+    "correo": "sara.rios@colegio.edu",
+    "edad": 16,
+    "nota": 2.8,
+    "asistencia": 54,
+    "proyecto": "Formulario de asistencia",
+    "linea": "formulario",
+    "esperado": "No aprobado"
+  }
+]

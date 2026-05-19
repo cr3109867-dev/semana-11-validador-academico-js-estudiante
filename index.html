@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Semana 11 | Validador académico JS</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__content">
+      <p class="eyebrow">Unidad 2 · Validación, corrección y presentación de proyectos de software</p>
+      <h1>Validador académico comunitario</h1>
+      <p>
+        Sistema evaluativo para practicar errores frecuentes en JavaScript,
+        depuración sistemática y control de flujos desde Visual Studio Code.
+      </p>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="card">
+      <div class="section-title">
+        <span class="badge">Reto principal</span>
+        <h2>Registro y validación de estudiantes</h2>
+      </div>
+
+      <p class="lead">
+        El sistema debe validar los datos de un estudiante, clasificar su estado académico
+        y registrar el resultado en la tabla. El archivo JavaScript contiene errores
+        intencionales que debes encontrar, corregir y documentar.
+      </p>
+
+      <form id="formRegistro" class="form" novalidate>
+        <div class="grid">
+          <label>
+            Nombre completo
+            <input id="nombre" type="text" placeholder="Ej. Laura Gómez" />
+          </label>
+
+          <label>
+            Correo electrónico
+            <input id="correo" type="email" placeholder="Ej. laura@correo.com" />
+          </label>
+
+          <label>
+            Edad
+            <input id="edad" type="number" min="0" max="120" placeholder="Ej. 15" />
+          </label>
+
+          <label>
+            Nota final
+            <input id="nota" type="number" min="0" max="5" step="0.1" placeholder="0.0 a 5.0" />
+          </label>
+
+          <label>
+            Asistencia (%)
+            <input id="asistencia" type="number" min="0" max="100" placeholder="0 a 100" />
+          </label>
+
+          <label>
+            Proyecto desarrollado
+            <input id="proyecto" type="text" placeholder="Ej. Feria digital rural" />
+          </label>
+
+          <label class="full">
+            Línea del proyecto
+            <select id="linea">
+              <option value="">Selecciona una opción</option>
+              <option value="web">Página web comunitaria</option>
+              <option value="datos">Registro y manejo de datos</option>
+              <option value="automatizacion">Automatización de tareas</option>
+              <option value="formulario">Formularios y validaciones</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="actions">
+          <button id="btnValidar" type="submit">Validar y registrar</button>
+          <button id="btnLimpiar" type="button" class="secondary">Limpiar formulario</button>
+          <button id="btnEjemplos" type="button" class="ghost">Cargar casos de prueba</button>
+        </div>
+      </form>
+
+      <div id="panelMensajes" class="message oculto" role="status" aria-live="polite"></div>
+    </section>
+
+    <aside class="card card--accent">
+      <h2>Ruta de depuración</h2>
+      <ol class="steps">
+        <li>Abre el proyecto en VS Code.</li>
+        <li>Ejecuta <strong>index.html</strong> con Live Server o en el navegador.</li>
+        <li>Abre la consola con <kbd>F12</kbd> o <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>I</kbd>.</li>
+        <li>Lee el primer error y ubica el archivo/línea.</li>
+        <li>Corrige una cosa a la vez.</li>
+        <li>Prueba de nuevo y completa la bitácora.</li>
+      </ol>
+
+      <div id="resumen" class="summary">
+        <strong>Resumen:</strong>
+        <span>Sin registros todavía.</span>
+      </div>
+    </aside>
+
+    <section class="card full-width">
+      <div class="section-title">
+        <span class="badge">Salida esperada</span>
+        <h2>Registros validados</h2>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Edad</th>
+              <th>Nota</th>
+              <th>Asistencia</th>
+              <th>Línea</th>
+              <th>Estado</th>
+              <th>Recomendación</th>
+            </tr>
+          </thead>
+          <tbody id="tablaRegistros">
+            <tr>
+              <td colspan="7" class="empty">Cuando el sistema funcione, los registros aparecerán aquí.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card full-width">
+      <h2>Preguntas guía para validar el sistema</h2>
+      <div class="question-grid">
+        <article>
+          <h3>1. Sintaxis</h3>
+          <p>¿El navegador puede leer todo el archivo JavaScript sin detenerse?</p>
+        </article>
+        <article>
+          <h3>2. Referencias</h3>
+          <p>¿Los identificadores usados en JavaScript coinciden con los ID del HTML?</p>
+        </article>
+        <article>
+          <h3>3. Tipos de datos</h3>
+          <p>¿Los valores numéricos se convierten antes de comparar o calcular?</p>
+        </article>
+        <article>
+          <h3>4. Flujo lógico</h3>
+          <p>¿Las condiciones clasifican correctamente al estudiante?</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Semana 11 · Evaluación individual en línea · JavaScript, depuración y control de flujos</p>
+  </footer>
+</body>
+</html>
