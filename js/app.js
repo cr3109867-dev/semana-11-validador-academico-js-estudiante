@@ -1,52 +1,48 @@
 /*
   SEMANA 11 - EVALUACION PRACTICA
-  Archivo con errores intencionales.
-
-  Instruccion:
-  - Corrige este archivo usando VS Code y la consola del navegador.
-  - No borres la funcionalidad esperada.
-  - Documenta cada error en docs/03-bitacora-depuracion.md.
-  - Debes conservar evidencia del antes y del despues.
+  Archivo corregido.
 */
 
 const form = document.getElementById("formRegistro");
 const btnLimpiar = document.getElementById("btnLimpiar");
-const btnEjemplos = document.getElementById("btnEjemplo");
-const panelMensajes = document.getElementById("panelMensaje");
+const btnEjemplos = document.getElementById("btnEjemplos");
+const panelMensajes = document.getElementById("panelMensajes");
 const tablaRegistros = document.getElementById("tablaRegistros");
 const resumen = document.getElementById("resumen");
 
 const registros = [];
 
-form.addEventListener("submit", validarRegistro());
+form.addEventListener("submit", validarRegistro);
 btnLimpiar.addEventListener("click", limpiarFormulario);
 btnEjemplos.addEventListener("click", cargarCasosPrueba);
 
 function validarRegistro(evento) {
+  evento.preventDefault();
+
   const nombre = document.getElementById("nombre").value.trim();
-  const correo = document.getElementById("email").value.trim();
-  const edad = document.getElementById("edad").value;
-  const nota = document.getElementById("nota").value;
-  const asistencia = document.getElementById("asistencia").value;
+  const correo = document.getElementById("correo").value.trim();
+  const edad = Number(document.getElementById("edad").value);
+  const nota = Number(document.getElementById("nota").value);
+  const asistencia = Number(document.getElementById("asistencia").value);
   const proyecto = document.getElementById("proyecto").value.trim();
   const linea = document.getElementById("linea").value;
 
-  if (nombre.length < 3 {
-    mostrarMensaje("El nombre debe tener minimo 3 caracteres.", "error");
+  if (nombre.length < 3) {
+    mostrarMensaje("El nombre debe tener mínimo 3 caracteres.", "error");
     return;
   }
 
-  if (!correo.includes("@") && !correo.includes(".")) {
-    mostrarMensaje("El correo debe tener un formato valido.", "error");
+  if (!correo.includes("@") || !correo.includes(".")) {
+    mostrarMensaje("El correo debe tener un formato válido.", "error");
     return;
   }
 
-  if (edad >= 12) {
-    mostrarMensaje("La edad minima para participar es de 12 anos.", "error");
+  if (edad < 12) {
+    mostrarMensaje("La edad mínima para participar es de 12 años.", "error");
     return;
   }
 
-  if (nota < 0 && nota > 5) {
+  if (nota < 0 || nota > 5) {
     mostrarMensaje("La nota debe estar entre 0.0 y 5.0.", "error");
     return;
   }
@@ -57,7 +53,7 @@ function validarRegistro(evento) {
   }
 
   if (proyecto === "" || linea === "") {
-    mostrarMensaje("Debes registrar el proyecto y seleccionar una linea.", "error");
+    mostrarMensaje("Debes registrar el proyecto y seleccionar una línea.", "error");
     return;
   }
 
@@ -90,7 +86,6 @@ function calcularEstado(nota, asistencia) {
   } else if (nota >= 3.0 || asistencia >= 60) {
     return "Plan de mejora";
   }
-
   return "No aprobado";
 }
 
@@ -108,18 +103,18 @@ function obtenerRecomendacion(estado, edad, linea) {
       recomendacion = "Documentar tareas repetitivas y validar resultados automatizados.";
       break;
     case "formulario":
-      recomendacion = "Mejorar reglas de validacion y mensajes al usuario.";
+      recomendacion = "Mejorar reglas de validación y mensajes al usuario.";
       break;
     default:
-      recomendacion = "Completar la informacion del proyecto.";
+      recomendacion = "Completar la información del proyecto.";
   }
 
-  if (estado = "No aprobado") {
-    recomendacion = "Requiere acompanamiento docente y nueva prueba funcional.";
+  if (estado === "No aprobado") {
+    recomendacion = "Requiere acompañamiento docente y nueva prueba funcional.";
   }
 
   if (edad < 14) {
-    recomendacion += " Sugerencia: trabajar con apoyo de un companero tutor.";
+    recomendacion += " Sugerencia: trabajar con apoyo de un compañero tutor.";
   }
 
   return recomendacion;
@@ -133,7 +128,7 @@ function renderizarTabla() {
     return;
   }
 
-  for (let i = 0; i <= registros.length; i++) {
+  for (let i = 0; i < registros.length; i++) {
     const registro = registros[i];
     const fila = document.createElement("tr");
 
@@ -167,13 +162,13 @@ function actualizarResumen() {
 
 function formatearLinea(linea) {
   const etiquetas = {
-    web: "Pagina web comunitaria",
+    web: "Página web comunitaria",
     datos: "Registro y manejo de datos",
-    automatizacion: "Automatizacion de tareas",
+    automatizacion: "Automatización de tareas",
     formulario: "Formularios y validaciones"
   };
 
-  return etiquetas[linea] || "Sin linea";
+  return etiquetas[linea] || "Sin línea";
 }
 
 function claseEstado(estado) {
@@ -183,9 +178,9 @@ function claseEstado(estado) {
 }
 
 function mostrarMensaje(texto, tipo) {
-  panelResultado.textContent = texto;
-  panelMensajes.classlist.remove("oculto", "error", "success", "warning");
-  panelMensajes.classList.add(tipo);
+  panelMensajes.textContent = texto;
+  panelMensajes.classList.remove("oculto", "error", "success", "warning");
+  panelMensajes.classList.add("message", tipo);
 }
 
 function limpiarFormulario() {
@@ -223,9 +218,7 @@ function cargarCasosPrueba() {
     }
   ];
 
-  for (let i = 0; i < casos.length; i++) {
-    registros.push(casos[i]);
-  }
+  registros.push(...casos);
 
   renderizarTabla();
   actualizarResumen();

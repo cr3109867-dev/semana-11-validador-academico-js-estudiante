@@ -18,11 +18,12 @@ const resumen = document.getElementById("resumen");
 
 const registros = [];
 
-form.addEventListener("submit", validarRegistro());
+form.addEventListener("submit", validarRegistro);
 btnLimpiar.addEventListener("click", limpiarFormulario);
 btnEjemplos.addEventListener("click", cargarCasosPrueba);
 
 function validarRegistro(evento) {
+  evento.preventDefault();
   const nombre = document.getElementById("nombre").value.trim();
   const correo = document.getElementById("email").value.trim();
   const edad = document.getElementById("edad").value;
@@ -31,22 +32,26 @@ function validarRegistro(evento) {
   const proyecto = document.getElementById("proyecto").value.trim();
   const linea = document.getElementById("linea").value;
 
-  if (nombre.length < 3 {
+  if (nombre.length < 3) {
+
     mostrarMensaje("El nombre debe tener minimo 3 caracteres.", "error");
     return;
   }
 
-  if (!correo.includes("@") && !correo.includes(".")) {
+  if (!correo.includes("@") || !correo.includes("."))
+{
     mostrarMensaje("El correo debe tener un formato valido.", "error");
     return;
   }
 
-  if (edad >= 12) {
+  if (edad < 12)
+ {
     mostrarMensaje("La edad minima para participar es de 12 anos.", "error");
     return;
   }
 
-  if (nota < 0 && nota > 5) {
+  if (nota < 0 || nota > 5)
+ {
     mostrarMensaje("La nota debe estar entre 0.0 y 5.0.", "error");
     return;
   }
@@ -114,7 +119,8 @@ function obtenerRecomendacion(estado, edad, linea) {
       recomendacion = "Completar la informacion del proyecto.";
   }
 
-  if (estado = "No aprobado") {
+  if (estado === "No aprobado")
+ {
     recomendacion = "Requiere acompanamiento docente y nueva prueba funcional.";
   }
 
@@ -133,7 +139,7 @@ function renderizarTabla() {
     return;
   }
 
-  for (let i = 0; i <= registros.length; i++) {
+  for (let i = 0; i < registros.length; i++) {
     const registro = registros[i];
     const fila = document.createElement("tr");
 
@@ -183,8 +189,8 @@ function claseEstado(estado) {
 }
 
 function mostrarMensaje(texto, tipo) {
-  panelResultado.textContent = texto;
-  panelMensajes.classlist.remove("oculto", "error", "success", "warning");
+  panelMensajes.textContent = texto;
+  panelMensajes.classList.remove("oculto", "error", "success", "warning");
   panelMensajes.classList.add(tipo);
 }
 

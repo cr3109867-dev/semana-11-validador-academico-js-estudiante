@@ -11,7 +11,7 @@ B. Un error que ocurre cuando el resultado no coincide con lo esperado, pero el 
 C. Un error de conexion a internet.  
 D. Un error exclusivo de CSS.
 
-Respuesta:
+Respuesta:Respuesta: A. Un error que ocurre cuando el código está mal escrito
 
 
 
@@ -22,7 +22,7 @@ B. Consola.
 C. Marcadores.  
 D. Descargas.
 
-Respuesta:
+Respuesta:B. Consola
 
 
 
@@ -33,7 +33,7 @@ B. Que no existe un elemento con ese ID o no esta disponible en ese momento.
 C. Que JavaScript no permite botones.  
 D. Que el navegador no soporta HTML.
 
-Respuesta:
+Respuestab:B. Que no existe un elemento con ese ID o no esta disponible en ese momento
 
 
 
@@ -44,7 +44,7 @@ B. Borra todos los datos del navegador.
 C. Cierra la consola.  
 D. Cambia el color del formulario.
 
-Respuesta:
+Respuesta:A. Evita que el formulario recargue o envie la pagina automaticamente. 
 
 
 
@@ -55,7 +55,7 @@ B. Ignorar los mensajes de consola.
 C. Corregir una cosa, probar y documentar.  
 D. Borrar todo el archivo.
 
-Respuesta:
+Respuesta:a. Corregir una cosa, probar y documentar. 
 
 
 
@@ -66,7 +66,7 @@ B. `table`.
 C. `body`.  
 D. `src`.
 
-Respuesta:
+Respuesta:A. `if`.
 
 
 
@@ -77,7 +77,7 @@ B. `alert`.
 C. `placeholder`.  
 D. `href`.
 
-Respuesta:
+Respuesta:A. `for`.
 
 
 
@@ -93,7 +93,7 @@ B. Que el HTML se borre.
 C. Que el CSS no cargue.  
 D. Ningun problema posible.
 
-Respuesta:
+Respuesta:A. Que `nota` se trate como texto y no como numero. 
 
 
 
@@ -104,7 +104,7 @@ B. `==`
 C. `===`  
 D. `=>`
 
-Respuesta:
+Respuesta:C. `===`
 
 
 
@@ -121,7 +121,7 @@ B. Falta una etiqueta HTML.
 C. Sobra la palabra edad.  
 D. No se puede usar `if`.
 
-Respuesta:
+Respuesta:A. Falta un parentesis de cierre. 
 
 
 
@@ -129,19 +129,19 @@ Respuesta:
 
 ### 11. Explica con tus palabras que es depurar codigo.
 
-Respuesta:
+Respuesta: Es el proceso de identificar, analizar y corregir errores en un programa de manera sistemática, usando la consola, pruebas y documentación.
 
 
 
 ### 12. Cual es la diferencia entre un error de sintaxis y un error logico?
 
-Respuesta:
+Respuesta: El error de sintaxis impide que el código se ejecute porque está mal escrito; el error lógico permite que el programa corra, pero el resultado es incorrecto.
 
 
 
 ### 13. Por que es importante documentar los errores encontrados?
 
-Respuesta:
+Respuesta: Porque ayuda a entender el proceso de corrección, evita repetir fallos en el futuro y demuestra el aprendizaje técnico.
 
 
 
@@ -149,8 +149,8 @@ Respuesta:
 
 Respuesta:
 
-
+Respuesta: Ingresé una nota fuera de rango (6.0) y verifiqué que el sistema mostrara el mensaje de error y no agregara el registro a la tabla.
 
 ### 15. Que relacion tiene el control de flujos con la validacion de formularios?
 
-Respuesta:
+Respuesta:Respuesta: El control de flujos (if, else, switch) permite decidir si los datos son válidos o inválidos y mostrar mensajes adecuados antes de procesarlo

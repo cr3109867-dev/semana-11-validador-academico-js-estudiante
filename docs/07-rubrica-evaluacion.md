@@ -28,3 +28,18 @@ El sistema funciona parcialmente, algunos errores persisten o la documentacion e
 ### Bajo
 
 El sistema no funciona, no hay evidencia suficiente de depuracion o la entrega esta incompleta.
+
+
+
+Identificación de errores (20 pts)
+
+Corrección técnica (25 pts)
+
+Depuración sistemática (20 pts)
+
+Control de flujos (15 pts)
+
+
+Documentación (15 pts)
+
+Presentación final (5 pts)
